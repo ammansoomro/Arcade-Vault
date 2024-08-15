@@ -2,6 +2,8 @@
 :root {
   --primary-color: #132028;
   --secondary-color: #3b5160;
+  --font-primary: #132028;
+  --font-secondary: #606060;
 }
 
 * {
@@ -23,4 +25,13 @@ a {
 .app {
   width: 80%;
   margin: auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
