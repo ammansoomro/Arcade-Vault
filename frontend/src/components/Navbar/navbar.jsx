@@ -14,7 +14,10 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <img src={assets.logo} alt="Logo" className="logo" />
+      <div className="logo-container">
+        <img src={assets.logo} alt="Logo" className="logo" />
+        <div className="logo-shadow"></div>
+      </div>
       <ul className="navbar-menu">
         {menuItems.map((item) => (
           <li
