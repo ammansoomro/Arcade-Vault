@@ -6,7 +6,6 @@ import Item from "../Item/Item";
 const ItemDisplay = ({ category }) => {
   const { item_list } = useContext(storeContext);
 
-  // Filter items based on the category prop
   const filteredItems = item_list.filter((item) => item.category === category);
 
   return (

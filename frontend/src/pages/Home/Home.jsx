@@ -5,7 +5,7 @@ import ExploreMenu from "../../components/ExploreMenu/ExploreMenu";
 import { useState } from "react";
 import ItemDisplay from "../../components/ItemsDisplay/ItemDisplay";
 const Home = () => {
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("Games");
 
   return (
     <div>

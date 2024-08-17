@@ -20,8 +20,10 @@
   border-radius: 0.875rem 0.875rem 0px 0px;
   height: 12.5rem;
   min-height: 12.5rem;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 1rem 0rem;
 }
+
 .item-image-container {
   position: relative;
 }
@@ -41,11 +43,11 @@
   gap: 0.625rem;
   bottom: 0.9375rem;
   right: 0.9375rem;
-  color: white;
+  color: #132028;
   font-size: 0.875rem;
   border-radius: 50px;
   padding: 0.25rem;
-  background-color: #a8a8a825;
+  background-color: #00000015;
   animation: fadeIn 0.5s;
 }
 
