@@ -4,7 +4,11 @@
   align-items: center;
   justify-content: space-between;
 }
-
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
 .logo-container {
   position: relative;
   display: inline-block;

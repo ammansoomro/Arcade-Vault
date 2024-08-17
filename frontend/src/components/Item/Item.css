@@ -6,7 +6,7 @@
   transition: 0.3s;
   animation: fadeIn 1s;
   cursor: pointer;
-  min-height: 400px;
+  min-height: 25rem;
   position: relative;
   margin-bottom: 1rem;
 }

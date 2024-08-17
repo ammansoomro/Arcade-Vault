@@ -3,10 +3,12 @@ import "./ItemDisplay.css";
 import { storeContext } from "../../context/StoreContext";
 import Item from "../Item/Item";
 
-const ItemDisplay = ({ category }) => {
+const ItemDisplay = ({ category = "All" }) => {
   const { item_list } = useContext(storeContext);
 
-  const filteredItems = item_list.filter((item) => item.category === category);
+  const filteredItems = item_list.filter((item) =>
+    category === "All" ? true : item.category === category
+  );
 
   return (
     <div className="item-display" id="item-display">

@@ -1,21 +1,19 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { assets } from "../../assets/assets";
 import "./Item.css";
+import { storeContext } from "../../context/StoreContext";
 
 const Item = ({ id, name, price, desc, image }) => {
-  const [itemCount, setItemCount] = useState(0);
-
-  const incrementCount = () => setItemCount((prev) => prev + 1);
-  const decrementCount = () => setItemCount((prev) => Math.max(prev - 1, 0));
+  const { cartItems, addToCart, removeFromCart } = useContext(storeContext);
 
   return (
     <div className="item">
       <div className="item-image-container">
         <img className="item-image" src={image} alt={name} />
-        {!itemCount ? (
+        {!cartItems[id] ? (
           <img
             className="add"
-            onClick={incrementCount}
+            onClick={() => addToCart(id)}
             src={assets.add_icon}
             alt="Add Item"
           />
@@ -23,13 +21,13 @@ const Item = ({ id, name, price, desc, image }) => {
           <div className="item-counter">
             <img
               src={assets.minus}
-              onClick={decrementCount}
+              onClick={() => removeFromCart(id)}
               alt="Decrease Quantity"
             />
-            <p>{itemCount}</p>
+            <p>{cartItems[id]}</p>
             <img
               src={assets.plus}
-              onClick={incrementCount}
+              onClick={() => addToCart(id)}
               alt="Increase Quantity"
             />
           </div>

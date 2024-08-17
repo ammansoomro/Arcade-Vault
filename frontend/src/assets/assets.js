@@ -46,9 +46,9 @@ import add_icon_green from "./add_icon_green.png";
 import remove_icon_red from "./remove_icon_red.png";
 import app_store from "./app_store.png";
 import play_store from "./play_store.png";
-import linkedin_icon from "./linkedin_icon.png";
-import facebook_icon from "./facebook_icon.png";
-import twitter_icon from "./twitter_icon.png";
+import linkedin_icon from "./linkedin_icon.svg";
+import github_icon from "./github_icon.svg";
+import twitter_icon from "./twitter_icon.svg";
 import cross_icon from "./cross_icon.png";
 import selector_icon from "./selector_icon.png";
 import rating_starts from "./rating_starts.png";
@@ -71,7 +71,7 @@ export const assets = {
   app_store,
   play_store,
   linkedin_icon,
-  facebook_icon,
+  github_icon,
   twitter_icon,
   cross_icon,
   selector_icon,
@@ -163,6 +163,24 @@ export const item_list = [
     category: "Games",
   },
   {
+    _id: "19",
+    name: "Suicide Squad: Kill the Justice League",
+    image: food_19,
+    price: 39,
+    description:
+      "Drop into an expansive and dynamic open-world Metropolis ravaged by Brainiac’s invasion and terrorized by the heroes who once protected it.",
+    category: "Games",
+  },
+  {
+    _id: "20",
+    name: "Prince of Persia The Lost Crown",
+    image: food_20,
+    price: 39,
+    description:
+      " Dash into a stylish and thrilling action-adventure platformer set in a mythological Persian world where the boundaries of time and space are yours to manipulate.",
+    category: "Games",
+  },
+  {
     _id: "9",
     name: "Playstation 4",
     image: food_9,
@@ -211,7 +229,7 @@ export const item_list = [
     _id: "14",
     name: "Xbox Series X|S Wireless Controller (Pulse Red)",
     image: food_14,
-    price: 18,
+    price: 89,
     description:
       "The Xbox Series X controller offers refined ergonomics, responsive buttons, improved grip, and cross-device compatibility.",
     category: "Controllers",
@@ -220,7 +238,7 @@ export const item_list = [
     _id: "15",
     name: "Xbox Series X|S Wireless Controller (Carbon Black)",
     image: food_15,
-    price: 16,
+    price: 79,
     description:
       "The Xbox Series X controller offers refined ergonomics, responsive buttons, improved grip, and cross-device compatibility.",
     category: "Controllers",
@@ -229,7 +247,7 @@ export const item_list = [
     _id: "16",
     name: "Xbox Series X|S Wireless Controller",
     image: food_16,
-    price: 24,
+    price: 59,
     description:
       "The Xbox Series X controller offers refined ergonomics, responsive buttons, improved grip, and cross-device compatibility.",
     category: "Controllers",
@@ -238,7 +256,7 @@ export const item_list = [
     _id: "17",
     name: "Sony PlayStation PULSE 3D Wireless Gaming Headset",
     image: food_17,
-    price: 14,
+    price: 49,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Headsets",
@@ -247,135 +265,9 @@ export const item_list = [
     _id: "18",
     name: "Xbox Wireless Headset – Starfield Limited Edition",
     image: food_18,
-    price: 12,
+    price: 49,
     description:
       "Food provides essential nutrients for overall health and well-being",
     category: "Headsets",
-  },
-  {
-    _id: "19",
-    name: "Suicide Squad: Kill the Justice League",
-    image: food_19,
-    price: 39,
-    description:
-      "Drop into an expansive and dynamic open-world Metropolis ravaged by Brainiac’s invasion and terrorized by the heroes who once protected it.",
-    category: "Games",
-  },
-  {
-    _id: "20",
-    name: "Prince of Persia The Lost Crown",
-    image: food_20,
-    price: 39,
-    description:
-      " Dash into a stylish and thrilling action-adventure platformer set in a mythological Persian world where the boundaries of time and space are yours to manipulate.",
-    category: "Games",
-  },
-  {
-    _id: "21",
-    name: "Garlic Mushroom ",
-    image: food_21,
-    price: 14,
-    description:
-      "Food provides essential nutrients for overall health and well-being",
-    category: "Pure Veg",
-  },
-  {
-    _id: "22",
-    name: "Fried Cauliflower",
-    image: food_22,
-    price: 22,
-    description:
-      "Food provides essential nutrients for overall health and well-being",
-    category: "Pure Veg",
-  },
-  {
-    _id: "23",
-    name: "Mix Veg Pulao",
-    image: food_23,
-    price: 10,
-    description:
-      "Food provides essential nutrients for overall health and well-being",
-    category: "Pure Veg",
-  },
-  {
-    _id: "24",
-    name: "Rice Zucchini",
-    image: food_24,
-    price: 12,
-    description:
-      "Food provides essential nutrients for overall health and well-being",
-    category: "Pure Veg",
-  },
-  {
-    _id: "25",
-    name: "Cheese Pasta",
-    image: food_25,
-    price: 12,
-    description:
-      "Food provides essential nutrients for overall health and well-being",
-    category: "Pasta",
-  },
-  {
-    _id: "26",
-    name: "Tomato Pasta",
-    image: food_26,
-    price: 18,
-    description:
-      "Food provides essential nutrients for overall health and well-being",
-    category: "Pasta",
-  },
-  {
-    _id: "27",
-    name: "Creamy Pasta",
-    image: food_27,
-    price: 16,
-    description:
-      "Food provides essential nutrients for overall health and well-being",
-    category: "Pasta",
-  },
-  {
-    _id: "28",
-    name: "Chicken Pasta",
-    image: food_28,
-    price: 24,
-    description:
-      "Food provides essential nutrients for overall health and well-being",
-    category: "Pasta",
-  },
-  {
-    _id: "29",
-    name: "Buttter Noodles",
-    image: food_29,
-    price: 14,
-    description:
-      "Food provides essential nutrients for overall health and well-being",
-    category: "Noodles",
-  },
-  {
-    _id: "30",
-    name: "Veg Noodles",
-    image: food_30,
-    price: 12,
-    description:
-      "Food provides essential nutrients for overall health and well-being",
-    category: "Noodles",
-  },
-  {
-    _id: "31",
-    name: "Somen Noodles",
-    image: food_31,
-    price: 20,
-    description:
-      "Food provides essential nutrients for overall health and well-being",
-    category: "Noodles",
-  },
-  {
-    _id: "32",
-    name: "Cooked Noodles",
-    image: food_32,
-    price: 15,
-    description:
-      "Food provides essential nutrients for overall health and well-being",
-    category: "Noodles",
   },
 ];

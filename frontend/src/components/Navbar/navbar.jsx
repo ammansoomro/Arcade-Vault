@@ -7,17 +7,21 @@ const Navbar = () => {
 
   const menuItems = [
     { id: "home", label: "Home" },
-    { id: "menu", label: "Menu" },
-    { id: "mobile-app", label: "Mobile-App" },
-    { id: "contact-us", label: "Contact Us" },
+    { id: "Cart", label: "Cart" },
   ];
 
   return (
     <div className="navbar">
-      <div className="logo-container">
-        <img src={assets.logo} alt="Logo" className="logo" />
-        <div className="logo-shadow"></div>
+      <div className="navbar-left">
+        <div className="logo-container">
+          <img src={assets.logo} alt="Logo" className="logo" />
+          <div className="logo-shadow"></div>
+        </div>
+        <div className="logo-text">
+          <h2>Arcade Vault</h2>
+        </div>
       </div>
+
       <ul className="navbar-menu">
         {menuItems.map((item) => (
           <li

@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { item_list } from "../assets/assets";
 
 export const storeContext = createContext(null);
@@ -24,6 +24,10 @@ const StoreContextProvider = ({ children }) => {
       return updatedCart;
     });
   };
+
+  useEffect(() => {
+    console.log(cartItems);
+  }, [cartItems]);
 
   const contextValue = {
     item_list,
