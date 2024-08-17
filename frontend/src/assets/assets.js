@@ -112,7 +112,7 @@ export const item_list = [
     _id: "1",
     name: "Rise of The Ronin",
     image: food_1,
-    price: 44,
+    price: 49,
     description:
       "Navigate the turbulent era of feudal Japan, mastering samurai skills and facing fierce, unforgettable enemies.",
     category: "Games",
@@ -121,7 +121,7 @@ export const item_list = [
     _id: "2",
     name: "Elden Ring",
     image: food_2,
-    price: 28,
+    price: 39,
     description:
       "Uncover secrets in a dark, expansive world filled with challenging enemies, ancient lore, and epic battles.",
     category: "Games",
@@ -130,7 +130,7 @@ export const item_list = [
     _id: "3",
     name: "Spider-Man Miles Morales",
     image: food_3,
-    price: 16,
+    price: 49,
     description:
       "Swing through New York as Miles Morales, mastering unique powers and battling villains in thrilling adventures.",
     category: "Games",
@@ -139,7 +139,7 @@ export const item_list = [
     _id: "4",
     name: "Tekken 8",
     image: food_4,
-    price: 59,
+    price: 29,
     description:
       "Experience intense, fast-paced combat with iconic characters in Tekken 8, featuring stunning graphics and new mechanics.",
     category: "Games",
@@ -148,7 +148,7 @@ export const item_list = [
     _id: "5",
     name: "Assassin's Creed: Mirage",
     image: food_5,
-    price: 69,
+    price: 49,
     description:
       "Immerse yourself in ancient Baghdad as a master assassin, navigating stealth, parkour, and epic quests in Mirage.",
     category: "Games",
@@ -157,19 +157,10 @@ export const item_list = [
     _id: "6",
     name: "God Of War",
     image: food_6,
-    price: 24,
+    price: 39,
     description:
       "Journey with Kratos and Atreus through a breathtaking Norse world, battling gods and monsters in God of War.",
     category: "Games",
-  },
-  {
-    _id: "7",
-    name: "Chicken Rolls",
-    image: food_7,
-    price: 20,
-    description:
-      "Food provides essential nutrients for overall health and well-being",
-    category: "Rolls",
   },
   {
     _id: "8",
@@ -272,21 +263,21 @@ export const item_list = [
   },
   {
     _id: "19",
-    name: "Butterscotch Cake",
+    name: "Suicide Squad: Kill the Justice League",
     image: food_19,
-    price: 20,
+    price: 39,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Cake",
+    category: "Games",
   },
   {
     _id: "20",
-    name: "Sliced Cake",
+    name: "Prince of Persia The Lost Crown",
     image: food_20,
-    price: 15,
+    price: 39,
     description:
       "Food provides essential nutrients for overall health and well-being",
-    category: "Cake",
+    category: "Games",
   },
   {
     _id: "21",
