@@ -163,21 +163,12 @@ export const item_list = [
     category: "Games",
   },
   {
-    _id: "8",
-    name: "Veg Rolls",
-    image: food_8,
-    price: 15,
-    description:
-      "Food provides essential nutrients for overall health and well-being",
-    category: "Rolls",
-  },
-  {
     _id: "9",
     name: "Playstation 4",
     image: food_9,
     price: 199,
     description:
-      "Food provides essential nutrients for overall health and well-being",
+      "PlayStation 4 offers a vast game library, solid performance, sleek design, and reliable online multiplayer.",
     category: "Consoles",
   },
   {
@@ -186,7 +177,7 @@ export const item_list = [
     image: food_10,
     price: 299,
     description:
-      "Food provides essential nutrients for overall health and well-being",
+      "PlayStation 5 delivers lightning-fast load times, stunning graphics, 3D audio, and immersive DualSense controller experiences.",
     category: "Consoles",
   },
   {
@@ -195,7 +186,7 @@ export const item_list = [
     image: food_11,
     price: 79,
     description:
-      "Food provides essential nutrients for overall health and well-being",
+      "DualSense controller enhances gameplay with haptic feedback, adaptive triggers, ergonomic design, and immersive, precise controls.",
     category: "Controllers",
   },
   {
@@ -204,7 +195,7 @@ export const item_list = [
     image: food_12,
     price: 59,
     description:
-      "Food provides essential nutrients for overall health and well-being",
+      "DualSense controller enhances gameplay with haptic feedback, adaptive triggers, ergonomic design, and immersive, precise controls.",
     category: "Controllers",
   },
   {
@@ -213,7 +204,7 @@ export const item_list = [
     image: food_13,
     price: 99,
     description:
-      "Food provides essential nutrients for overall health and well-being",
+      "DualSense controller enhances gameplay with haptic feedback, adaptive triggers, ergonomic design, and immersive, precise controls.",
     category: "Controllers",
   },
   {
@@ -222,7 +213,7 @@ export const item_list = [
     image: food_14,
     price: 18,
     description:
-      "Food provides essential nutrients for overall health and well-being",
+      "The Xbox Series X controller offers refined ergonomics, responsive buttons, improved grip, and cross-device compatibility.",
     category: "Controllers",
   },
   {
@@ -231,7 +222,7 @@ export const item_list = [
     image: food_15,
     price: 16,
     description:
-      "Food provides essential nutrients for overall health and well-being",
+      "The Xbox Series X controller offers refined ergonomics, responsive buttons, improved grip, and cross-device compatibility.",
     category: "Controllers",
   },
   {
@@ -240,7 +231,7 @@ export const item_list = [
     image: food_16,
     price: 24,
     description:
-      "Food provides essential nutrients for overall health and well-being",
+      "The Xbox Series X controller offers refined ergonomics, responsive buttons, improved grip, and cross-device compatibility.",
     category: "Controllers",
   },
   {
@@ -267,7 +258,7 @@ export const item_list = [
     image: food_19,
     price: 39,
     description:
-      "Food provides essential nutrients for overall health and well-being",
+      "Drop into an expansive and dynamic open-world Metropolis ravaged by Brainiac’s invasion and terrorized by the heroes who once protected it.",
     category: "Games",
   },
   {
@@ -276,7 +267,7 @@ export const item_list = [
     image: food_20,
     price: 39,
     description:
-      "Food provides essential nutrients for overall health and well-being",
+      " Dash into a stylish and thrilling action-adventure platformer set in a mythological Persian world where the boundaries of time and space are yours to manipulate.",
     category: "Games",
   },
   {
