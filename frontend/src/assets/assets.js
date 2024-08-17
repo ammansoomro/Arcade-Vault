@@ -103,60 +103,60 @@ export const menu_list = [
   },
 ];
 
-export const food_list = [
+export const item_list = [
   {
     _id: "1",
-    name: "Greek salad",
+    name: "Rise of The Ronin",
     image: food_1,
-    price: 12,
+    price: 44,
     description:
-      "Food provides essential nutrients for overall health and well-being",
-    category: "Salad",
+      "Navigate the turbulent era of feudal Japan, mastering samurai skills and facing fierce, unforgettable enemies.",
+    category: "Games",
   },
   {
     _id: "2",
-    name: "Veg salad",
+    name: "Elden Ring",
     image: food_2,
-    price: 18,
+    price: 28,
     description:
-      "Food provides essential nutrients for overall health and well-being",
-    category: "Salad",
+      "Uncover secrets in a dark, expansive world filled with challenging enemies, ancient lore, and epic battles.",
+    category: "Games",
   },
   {
     _id: "3",
-    name: "Clover Salad",
+    name: "Spider-Man Miles Morales",
     image: food_3,
     price: 16,
     description:
-      "Food provides essential nutrients for overall health and well-being",
-    category: "Salad",
+      "Swing through New York as Miles Morales, mastering unique powers and battling villains in thrilling adventures.",
+    category: "Games",
   },
   {
     _id: "4",
-    name: "Chicken Salad",
+    name: "Tekken 8",
     image: food_4,
-    price: 24,
+    price: 59,
     description:
-      "Food provides essential nutrients for overall health and well-being",
-    category: "Salad",
+      "Experience intense, fast-paced combat with iconic characters in Tekken 8, featuring stunning graphics and new mechanics.",
+    category: "Games",
   },
   {
     _id: "5",
-    name: "Lasagna Rolls",
+    name: "Assassin's Creed: Mirage",
     image: food_5,
-    price: 14,
+    price: 69,
     description:
-      "Food provides essential nutrients for overall health and well-being",
-    category: "Rolls",
+      "Immerse yourself in ancient Baghdad as a master assassin, navigating stealth, parkour, and epic quests in Mirage.",
+    category: "Games",
   },
   {
     _id: "6",
-    name: "Peri Peri Rolls",
+    name: "God Of War",
     image: food_6,
-    price: 12,
+    price: 24,
     description:
-      "Food provides essential nutrients for overall health and well-being",
-    category: "Rolls",
+      "Journey with Kratos and Atreus through a breathtaking Norse world, battling gods and monsters in God of War.",
+    category: "Games",
   },
   {
     _id: "7",
