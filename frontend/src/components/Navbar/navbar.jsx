@@ -10,10 +10,7 @@ const Navbar = ({ setShowLogin }) => {
 
   const { getTotalAmount } = useContext(storeContext);
 
-  const menuItems = [
-    { id: "", label: "Home" },
-    { id: "cart", label: "Cart" },
-  ];
+  const menuItems = [{ id: "", label: "Home" }];
 
   return (
     <div className="navbar">

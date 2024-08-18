@@ -1,0 +1,48 @@
+.place-order {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 3.125rem;
+  margin-top: 6.25rem;
+}
+
+.place-order-left {
+  width: 100%;
+  max-width: max(30%, 31.25rem);
+}
+
+.place-order-left .title {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin-bottom: 3.125rem;
+  color: var(--font-primary);
+}
+
+.place-order-left input {
+  padding: 0.625rem 0.9375rem;
+  border: 1px solid var(--font-primary);
+  border-radius: 0.25rem;
+  font-size: 14px;
+  outline: none;
+  color: var(--font-primary);
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.place-order-left .multi-fields {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.place-order-right {
+  width: 100%;
+  max-width: max(40%, 31.25rem);
+}
+
+.place-order .cart-total button {
+  margin-top: 1.875rem;
+}
+
+.place-order .cart-total h2 {
+  margin-bottom: 2rem;
+}
