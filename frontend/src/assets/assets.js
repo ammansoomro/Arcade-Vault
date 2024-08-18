@@ -49,7 +49,7 @@ import play_store from "./play_store.png";
 import linkedin_icon from "./linkedin_icon.svg";
 import github_icon from "./github_icon.svg";
 import twitter_icon from "./twitter_icon.svg";
-import cross_icon from "./cross_icon.png";
+import cross_icon from "./cross_icon.svg";
 import selector_icon from "./selector_icon.png";
 import rating_starts from "./rating_starts.png";
 import profile_icon from "./profile_icon.png";
