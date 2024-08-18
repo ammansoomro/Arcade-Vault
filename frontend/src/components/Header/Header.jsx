@@ -13,7 +13,7 @@ const Header = () => {
           the action and immerse yourself in the ultimate gaming experience.
           Don't miss out—secure your copy now and get ready for endless fun!
         </p>
-        <button className="header-button">View Games</button>
+        {/* <button className="header-button">View Games</button> */}
       </div>
     </div>
   );

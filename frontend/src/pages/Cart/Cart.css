@@ -1,0 +1,28 @@
+.cart {
+  margin-top: 6.25rem;
+}
+
+.cart-items-title {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
+  align-items: center;
+  color: var(--font-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.cart-item {
+  margin: 10px 0px;
+  color: black;
+}
+
+.cart-item img {
+  width: 4.6875rem;
+  height: 4.6875rem;
+}
+
+.cart-item .remove-item {
+  cursor: pointer;
+  margin: 0rem 1rem;
+  width: 2.1875rem;
+}
