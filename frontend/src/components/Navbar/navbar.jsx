@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import "./navbar.css";
 import { assets } from "../../assets/assets";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [activeMenu, setActiveMenu] = useState("home");
 
   const menuItems = [
-    { id: "home", label: "Home" },
-    { id: "Cart", label: "Cart" },
+    { id: "", label: "Home" },
+    { id: "cart", label: "Cart" },
   ];
 
   return (
@@ -24,13 +25,14 @@ const Navbar = () => {
 
       <ul className="navbar-menu">
         {menuItems.map((item) => (
-          <li
+          <Link
+            to={`/${item.id}`}
             key={item.id}
             onClick={() => setActiveMenu(item.id)}
             className={activeMenu === item.id ? "active" : ""}
           >
             {item.label}
-          </li>
+          </Link>
         ))}
       </ul>
       <div className="navbar-right">
