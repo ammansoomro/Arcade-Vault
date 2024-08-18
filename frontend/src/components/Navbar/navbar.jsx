@@ -15,10 +15,12 @@ const Navbar = ({ setShowLogin }) => {
   return (
     <div className="navbar">
       <div className="navbar-left">
-        <div className="logo-container">
-          <img src={assets.logo} alt="Logo" className="logo" />
-          <div className="logo-shadow"></div>
-        </div>
+        <Link to="/">
+          <div className="logo-container">
+            <img src={assets.logo} alt="Logo" className="logo" />
+            <div className="logo-shadow"></div>
+          </div>
+        </Link>
         <div className="logo-text">
           <h2>Arcade Vault</h2>
         </div>
