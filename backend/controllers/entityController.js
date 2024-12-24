@@ -36,4 +36,20 @@ const addEntity = async (req, res) => {
   }
 };
 
-export { addEntity };
+const listEntities = async (req, res) => {
+  try {
+    const entities = await entityModel.find({});
+    return res.status(201).json({
+      success: true,
+      data: entities,
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal server error while getting list.",
+    });
+  }
+};
+
+export { addEntity, listEntities };
