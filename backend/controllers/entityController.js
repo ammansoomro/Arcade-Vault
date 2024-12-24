@@ -39,7 +39,7 @@ const addEntity = async (req, res) => {
 const listEntities = async (req, res) => {
   try {
     const entities = await entityModel.find({});
-    return res.status(201).json({
+    return res.status(200).json({
       success: true,
       data: entities,
     });
@@ -52,4 +52,22 @@ const listEntities = async (req, res) => {
   }
 };
 
-export { addEntity, listEntities };
+const removeEntity = async (req, res) => {
+  try {
+    const entity = await entityModel.findById(req.body.id);
+    fs.unlink(`uploads/${entity.image}`, () => {});
+    await entityModel.findByIdAndDelete(req.body.id);
+    res.status(200).json({
+      success: true,
+      message: "Entity Removed.",
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal server error while removing entity.",
+    });
+  }
+};
+
+export { addEntity, listEntities, removeEntity };
