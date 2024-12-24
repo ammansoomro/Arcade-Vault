@@ -1,4 +1,4 @@
-import entityModel from "../models/entityModel";
+import entityModel from "../models/entityModel.js";
 import fs from "fs";
 
 // Add Entity

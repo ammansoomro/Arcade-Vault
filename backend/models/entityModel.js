@@ -27,6 +27,4 @@ const entitySchema = new mongoose.Schema({
 const entityModel =
   mongoose.model.entity || mongoose.model("entity", entitySchema);
 
-console.log("entityModel Called");
-console.log(mongoose.model);
 export default entityModel;
