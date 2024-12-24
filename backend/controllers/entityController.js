@@ -6,7 +6,6 @@ const addEntity = async (req, res) => {
   const { name, desc, price, category } = req.body;
   const imageName = req.file?.filename;
 
-  console.log(name + " " + desc + " " + price + " " + category + " " + imageName);
   if (!name || !desc || !price || !category || !imageName) {
     return res.status(400).json({
       success: false,
@@ -14,13 +13,12 @@ const addEntity = async (req, res) => {
     });
   }
 
-
   const entity = new entityModel({
     name,
     desc,
     price,
     category,
-    image: "",
+    image: imageName,
   });
 
   try {
