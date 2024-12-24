@@ -19,6 +19,7 @@ connectDB();
 
 // API END POINTS
 app.use(customConstants.API_ENDPOINT + "items", entityRouter);
+app.use("/images", express.static("uploads"));
 
 app.get("/", (req, res) => {
   res.send("Api Working");
