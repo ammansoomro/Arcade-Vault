@@ -1,0 +1,18 @@
+frontend:
+npm run dev
+
+backend:
+npm start
+
+packages:
+1. express
+2. mongoose
+3. jsonwebtoken
+4. bcrypt
+5. cors
+6. dotenv
+7. body-parser
+8. multer
+9. stripe
+10. validator
+11. nodemon
