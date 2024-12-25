@@ -1,0 +1,6 @@
+.form-wrapper {
+  padding: 2rem;
+  animation: fadeIn 1s;
+  width: 80%;
+  display: flex;
+}
