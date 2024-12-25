@@ -1,4 +1,6 @@
 import React from "react";
+import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
 import Navbar from "./components/Navbar/navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 import { Routes, Route } from "react-router-dom";
@@ -10,7 +12,8 @@ import AddCategory from "./pages/AddCategory/AddCategory";
 const App = () => {
   return (
     <div className="app">
-      <Navbar></Navbar>
+      <ToastContainer />
+      <Navbar />
       <div className="app-content">
         <Sidebar></Sidebar>
         <Routes>
