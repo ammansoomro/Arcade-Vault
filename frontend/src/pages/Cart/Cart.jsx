@@ -3,6 +3,7 @@ import "./Cart.css";
 import { storeContext } from "../../context/StoreContext";
 import { assets } from "../../assets/assets";
 import { useNavigate } from "react-router-dom";
+import customConstants from "../../utilities/customConstants";
 const Cart = () => {
   const { cartItems, item_list, removeFromCart, getTotalAmount } =
     useContext(storeContext);
@@ -12,7 +13,7 @@ const Cart = () => {
     <div className="cart">
       <div className="cart-items">
         <div className="cart-items-title">
-          <p>Items</p>
+          <p>Image</p>
           <p>Title</p>
           <p>Price</p>
           <p>Quantity</p>
@@ -24,9 +25,12 @@ const Cart = () => {
         {item_list.map((item, index) => {
           if (cartItems[item._id] > 0) {
             return (
-              <div>
+              <div key={index}>
                 <div key={index} className="cart-items-title cart-item">
-                  <img src={item.image} alt="Item" />
+                  <img
+                    src={`${customConstants.API_IMAGES}` + item.image}
+                    alt="Item"
+                  />
                   <p>{item.name}</p>
                   <p>${item.price}</p>
                   <p>{cartItems[item._id]}</p>
