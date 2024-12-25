@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./ExploreMenu.css";
-import { menu_list } from "../../assets/assets";
 import customConstants from "../../utilities/customConstants";
 import axios from "axios";
 
@@ -32,7 +31,7 @@ const ExploreMenu = ({ category, setCategory }) => {
 
   return (
     <div className="explore-menu" id="explore-menu">
-      <h1>Customer's Favourite</h1>
+      <h1>Expore Menu</h1>
       <p className="explore-menu-text">
         Choose from a diverse collection of games and accessories. Whether
         you're a seasoned gamer or just starting out, we have something for

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import "./ItemDisplay.css";
+import customConstants from "../../utilities/customConstants";
 import { storeContext } from "../../context/StoreContext";
 import Item from "../Item/Item";
 
@@ -12,7 +13,7 @@ const ItemDisplay = ({ category = "All" }) => {
 
   return (
     <div className="item-display" id="item-display">
-      <h2>Top Item's Today</h2>
+      <h2>{category}</h2>
       <div className="item-display-list">
         {filteredItems.map((item, index) => (
           <Item
@@ -20,8 +21,8 @@ const ItemDisplay = ({ category = "All" }) => {
             id={item._id}
             name={item.name}
             price={item.price}
-            desc={item.description}
-            image={item.image}
+            desc={item.desc}
+            image={`${customConstants.API_IMAGES}` + item.image}
           />
         ))}
       </div>

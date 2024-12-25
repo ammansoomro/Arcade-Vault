@@ -1,8 +1,29 @@
 import React, { createContext, useEffect, useState } from "react";
-import { item_list } from "../assets/assets";
+import axios from "axios";
+import customConstants from "../utilities/customConstants";
 export const storeContext = createContext(null);
-
 const StoreContextProvider = ({ children }) => {
+  const [item_list, setList] = useState([]);
+
+  const fetchList = async () => {
+    const response = await axios.get(customConstants.API_LIST_ITEMS);
+    if (response.data.success) {
+      return response.data.data;
+    } else {
+      toast.error("Error Fetching Data");
+    }
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchList();
+      if (data) {
+        setList(data);
+      }
+    };
+    fetchData();
+  }, []);
+
   const [cartItems, setCartItems] = useState({});
 
   const addToCart = (itemId) => {
