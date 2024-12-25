@@ -1,7 +1,6 @@
 import entityModel from "../models/entityModel.js";
 import fs from "fs";
 
-// Add Entity
 const addEntity = async (req, res) => {
   const { name, desc, price, category } = req.body;
   const imageName = req.file?.filename;
@@ -70,4 +69,28 @@ const removeEntity = async (req, res) => {
   }
 };
 
-export { addEntity, listEntities, removeEntity };
+const getByCategory = async (req, res) => {
+  const { category } = req.params;
+
+  try {
+    const entities = await entityModel.find({ category });
+    if (entities.length === 0) {
+      return res.status(404).json({
+        success: false,
+        message: "No entities found in this category.",
+      });
+    }
+    return res.status(200).json({
+      success: true,
+      data: entities,
+    });
+  } catch (error) {
+    console.error("Error fetching entities by category:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal server error while fetching entities by category.",
+    });
+  }
+};
+
+export { addEntity, listEntities, removeEntity, getByCategory };
