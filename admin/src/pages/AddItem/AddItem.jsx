@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./AddItem.css";
 import FormWrapper from "../../components/FormWrapper/FormWrapper";
 import { assets } from "../../assets/assets";
@@ -9,6 +9,26 @@ import { toast } from "react-toastify";
 const AddItem = () => {
   const [inputs, setInputs] = useState(customConstants.INITIAL_ADD_ITEM_INPUT);
   const [image, setImage] = useState(null);
+  const [categories, setCategories] = useState([]);
+
+  const fetchCategories = async () => {
+    const response = await axios.get(customConstants.API_LIST_CATEGORIES);
+    if (response.data.success) {
+      return response.data.data;
+    } else {
+      toast.error("Error Fetching Data");
+    }
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchCategories();
+      if (data) {
+        setCategories(data);
+      }
+    };
+    fetchData();
+  }, []);
 
   const handleInput = (e) => {
     const { name, value } = e.target;
@@ -82,11 +102,9 @@ const AddItem = () => {
               onChange={handleInput}
               value={inputs.category}
             >
-              <option value="Games">Games</option>
-              <option value="Consoles">Consoles</option>
-              <option value="Controllers">Controllers</option>
-              <option value="Headsets">Headsets</option>
-              <option value="Subscriptions">Subscriptions</option>
+              {categories.map((category) => {
+                return <option value={category.name}>{category.name}</option>;
+              })}
             </select>
           </div>
           <div className="input-gap upload-image-container">
