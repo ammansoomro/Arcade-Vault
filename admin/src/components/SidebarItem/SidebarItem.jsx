@@ -1,11 +1,12 @@
 import React from "react";
 import "./SidebarItem.css";
-const SidebarItem = ({ icon, label }) => {
+import { NavLink } from "react-router-dom";
+const SidebarItem = ({ icon, label, toPath }) => {
   return (
-    <div className="sidebar-item">
+    <NavLink to={toPath} className="sidebar-item">
       <img src={icon} alt={label} />
       <p>{label}</p>
-    </div>
+    </NavLink>
   );
 };
 
