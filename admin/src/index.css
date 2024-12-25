@@ -24,7 +24,6 @@ a {
 }
 
 .app {
-  width: 80%;
   margin: auto;
 }
 
@@ -35,4 +34,8 @@ a {
   to {
     opacity: 1;
   }
+}
+
+.app-content {
+  display: flex;
 }
