@@ -4,6 +4,7 @@ import { connectDB } from "./config/db.js";
 import dotenv from "dotenv";
 import customConstants from "./utilities/customConstants.js";
 import entityRouter from "./routes/entityRoute.js";
+import categoryRouter from "./routes/categoryRoute.js";
 dotenv.config();
 
 // App Config
@@ -19,6 +20,7 @@ connectDB();
 
 // API END POINTS
 app.use(customConstants.API_ENDPOINT + "items", entityRouter);
+app.use(customConstants.API_ENDPOINT + "categories", categoryRouter);
 app.use("/images", express.static("uploads"));
 
 app.get("/", (req, res) => {
