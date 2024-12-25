@@ -7,7 +7,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const AddItem = () => {
-  const [inputs, setInputs] = useState(customConstants.INITIAL_ADD_INPUTS);
+  const [inputs, setInputs] = useState(customConstants.INITIAL_ADD_ITEM_INPUT);
   const [image, setImage] = useState(null);
 
   const handleInput = (e) => {
@@ -34,7 +34,7 @@ const AddItem = () => {
       const response = await axios.post(customConstants.API_ADD_ITEM, formData);
 
       if (response.data.success) {
-        setInputs(customConstants.INITIAL_ADD_INPUTS);
+        setInputs(customConstants.INITIAL_ADD_ITEM_INPUT);
         setImage(null);
         toast.success(response.data.message);
       } else {
@@ -84,6 +84,9 @@ const AddItem = () => {
             >
               <option value="Games">Games</option>
               <option value="Consoles">Consoles</option>
+              <option value="Controllers">Controllers</option>
+              <option value="Headsets">Headsets</option>
+              <option value="Subscriptions">Subscriptions</option>
             </select>
           </div>
           <div className="input-gap upload-image-container">
