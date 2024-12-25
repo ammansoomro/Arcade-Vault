@@ -1,8 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ExploreMenu.css";
 import { menu_list } from "../../assets/assets";
+import customConstants from "../../utilities/customConstants";
+import axios from "axios";
 
 const ExploreMenu = ({ category, setCategory }) => {
+  const [list, setList] = useState([]);
+
+  const fetchList = async () => {
+    const response = await axios.get(customConstants.API_LIST_CATEGORIES);
+    if (response.data.success) {
+      return response.data.data;
+    } else {
+      toast.error("Error Fetching Data");
+    }
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchList();
+      if (data) {
+        setList(data);
+      }
+    };
+    fetchData();
+  }, []);
+
   const handleCategoryClick = (menuName) => {
     setCategory((prev) => (prev === menuName ? "All" : menuName));
   };
@@ -17,16 +40,19 @@ const ExploreMenu = ({ category, setCategory }) => {
         gaming collection.
       </p>
       <div className="explore-menu-list">
-        {menu_list.map((item, index) => (
+        {list.map((item, index) => (
           <div
-            onClick={() => handleCategoryClick(item.menu_name)}
+            onClick={() => handleCategoryClick(item.name)}
             key={index}
             className={`explore-menu-item ${
-              category === item.menu_name ? "active" : ""
+              category === item.name ? "active" : ""
             }`}
           >
-            <img src={item.menu_image} alt={item.name} />
-            <p>{item.menu_name}</p>
+            <img
+              src={`${customConstants.API_IMAGES}` + item.image}
+              alt={item.image}
+            />
+            <p>{item.name}</p>
           </div>
         ))}
       </div>

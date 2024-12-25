@@ -1,6 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
 import { item_list } from "../assets/assets";
-
 export const storeContext = createContext(null);
 
 const StoreContextProvider = ({ children }) => {
