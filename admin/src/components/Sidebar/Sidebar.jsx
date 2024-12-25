@@ -1,22 +1,20 @@
 import React from "react";
 import "./Sidebar.css";
 import { assets } from "../../assets/assets";
+import SidebarItem from "../SidebarItem/SidebarItem";
 const Sidebar = () => {
+  const items = [
+    { icon: assets.add_icon, label: "Add Item" },
+    { icon: assets.list_icon, label: "View Items" },
+    { icon: assets.order_icon, label: "All Orders" },
+  ];
+
   return (
     <div className="sidebar">
       <div className="sidebar-items">
-        <div className="sidebar-item">
-          <img src={assets.add_icon} alt="" />
-          <p>Add Item</p>
-        </div>
-        <div className="sidebar-item">
-          <img src={assets.list_icon} alt="" />
-          <p>All Items</p>
-        </div>
-        <div className="sidebar-item">
-          <img src={assets.order_icon} alt="" />
-          <p>All Orders</p>
-        </div>
+        {items.map((item, index) => (
+          <SidebarItem key={index} icon={item.icon} label={item.label} />
+        ))}
       </div>
     </div>
   );
