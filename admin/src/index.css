@@ -41,3 +41,50 @@ a {
 .app-content {
   display: flex;
 }
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-gap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.submit-button {
+  width: 20%;
+  border-radius: 0.5rem;
+  transition: 0.3s;
+  animation: fadeIn 1s;
+  cursor: pointer;
+  border: none;
+  color: var(--font-primary-light);
+  background: var(--secondary-color);
+  font-size: 1rem;
+  padding: 0.25rem;
+  transition: all 0.4s ease-in-out;
+  font-weight: 500;
+}
+
+.submit-button:hover {
+  transform: scale(1.04);
+}
+
+input,
+textarea,
+select {
+  padding: 0.625rem 0.9375rem;
+  border: 1px solid var(--font-primary);
+  border-radius: 0.25rem;
+  font-size: 14px;
+  outline: none;
+  color: var(--font-primary);
+  width: 100%;
+}
+
+input::placeholder {
+  color: var(--font-secondary);
+}

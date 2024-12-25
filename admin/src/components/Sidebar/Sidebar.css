@@ -1,6 +1,6 @@
 .sidebar {
-  width: 18%;
-  min-height: 100vh;
+  width: 20%;
+  min-height: 86vh;
   margin-top: 0;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   font-size: max(1vw, 1rem);
@@ -9,5 +9,4 @@
 .sidebar-items {
   display: flex;
   flex-direction: column;
-  /* gap: 0.5rem; */
 }

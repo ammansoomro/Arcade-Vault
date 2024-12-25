@@ -4,6 +4,8 @@ import order_icon from "./order_icon.svg";
 import list_icon from "./list_icon.svg";
 import add_category from "./add_category.svg";
 import list_categories from "./list_categories.svg";
+import upload_icon from "./upload_icon.svg";
+
 export const assets = {
   logo,
   add_icon,
@@ -11,4 +13,5 @@ export const assets = {
   order_icon,
   add_category,
   list_categories,
+  upload_icon,
 };
