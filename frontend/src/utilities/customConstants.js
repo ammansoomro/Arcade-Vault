@@ -1,13 +1,12 @@
 const customConstants = {
-  API_IMAGES: "https://delivery-app-production-1ed5.up.railway.app/images/",
+  API_IMAGES: "http://localhost:4007/images/",
 
   // ITEM CONSTANTS
-  API_LIST_ITEMS:
-    "https://delivery-app-production-1ed5.up.railway.app/api/items/list",
-
+  API_LIST_ITEMS: "http://localhost:4007/api/items/list",
+  
   // CATEGORY CONSTANTS
-  API_LIST_CATEGORIES:
-    "https://delivery-app-production-1ed5.up.railway.app/api/categories/list",
+  API_LIST_CATEGORIES: "http://localhost:4007/api/categories/list",
+
 };
 
 export default customConstants;
