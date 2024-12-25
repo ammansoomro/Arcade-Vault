@@ -4,7 +4,7 @@ import {
   listEntities,
   removeEntity,
 } from "../controllers/entityController.js";
-import { upload } from "../utilities/utils.js";
+import { upload } from "../middleware/multerImage.js";
 const entityRouter = express.Router();
 
 entityRouter.post("/add", upload.single("image"), addEntity);
