@@ -1,8 +1,55 @@
 import userModel from "../models/userModel.js";
 import bcrypt from "bcrypt";
 import validator from "validator";
-import {createToken} from "../utilities/utils.js";
-const loginUser = async (req, res) => {};
+import { createToken } from "../utilities/utils.js";
+
+const loginUser = async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    // Check if email and password are provided
+    if (!email || !password) {
+      return res.status(400).json({
+        success: false,
+        message: "Email and password are required.",
+      });
+    }
+
+    // Find user by email
+    const user = await userModel.findOne({ email });
+    if (!user) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid email or password.",
+      });
+    }
+
+    // Compare provided password with stored hashed password
+    const isPasswordCorrect = await bcrypt.compare(password, user.password);
+    if (!isPasswordCorrect) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid email or password.",
+      });
+    }
+
+    // Generate authentication token
+    const token = createToken(user._id);
+
+    // Respond with success
+    return res.status(200).json({
+      success: true,
+      token,
+      message: "Login successful.",
+    });
+  } catch (error) {
+    // Handle server errors
+    return res.status(500).json({
+      success: false,
+      message: "An error occurred while logging in. Please try again later.",
+    });
+  }
+};
 
 const registerUser = async (req, res) => {
   const { name, email, password } = req.body;
