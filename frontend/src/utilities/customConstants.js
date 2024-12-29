@@ -18,7 +18,7 @@ const customConstants = {
 
   // Place Order
   API_PLACE_ORDER: "http://localhost:4007/api/order/place",
-
+  API_VERIFY_ORDER: "http://localhost:4007/api/order/verify",
 };
 
 export default customConstants;
