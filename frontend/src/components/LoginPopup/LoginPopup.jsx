@@ -1,15 +1,51 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./LoginPopup.css";
 import { assets } from "../../assets/assets";
+import customConstants from "../../utilities/customConstants";
+import axios from "axios";
+import { storeContext } from "../../context/StoreContext";
 
 const LoginPopup = ({ setShowLogin }) => {
   const [isSignUp, setIsSignUp] = useState(true);
-
   const toggleState = () => setIsSignUp((prev) => !prev);
+  const { setToken } = useContext(storeContext);
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const onChangeHandler = (event) => {
+    const { name, value } = event.target;
+    setData((prevData) => ({ ...prevData, [name]: value }));
+  };
+
+  const loginHandler = async (event) => {
+    event.preventDefault();
+
+    try {
+      const url = isSignUp
+        ? customConstants.API_REGISTER
+        : customConstants.API_LOGIN;
+
+      const response = await axios.post(url, data);
+
+      if (response.data.success) {
+        const { token } = response.data;
+        setToken(token);
+        localStorage.setItem("token", token);
+        setShowLogin(false);
+      } else {
+        alert(response.data.message);
+      }
+    } catch (error) {
+      alert("An error occurred. Please try again.");
+    }
+  };
 
   return (
     <div className="login-popup">
-      <form className="login-popup-container">
+      <form onSubmit={loginHandler} className="login-popup-container">
         <div className="login-popup-title">
           <h2>{isSignUp ? "Sign Up" : "Login"}</h2>
           <img
@@ -19,11 +55,34 @@ const LoginPopup = ({ setShowLogin }) => {
           />
         </div>
         <div className="login-popup-inputs">
-          {isSignUp && <input type="text" placeholder="Your Name" required />}
-          <input type="email" placeholder="Your Email" required />
-          <input type="password" placeholder="Password" required />
+          {isSignUp && (
+            <input
+              type="text"
+              name="name"
+              value={data.name}
+              onChange={onChangeHandler}
+              placeholder="Your Name"
+              required
+            />
+          )}
+          <input
+            type="email"
+            name="email"
+            value={data.email}
+            onChange={onChangeHandler}
+            placeholder="Your Email"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            value={data.password}
+            onChange={onChangeHandler}
+            placeholder="Password"
+            required
+          />
         </div>
-        <button>{isSignUp ? "Create Account" : "Login"}</button>
+        <button type="submit">{isSignUp ? "Create Account" : "Login"}</button>
         {isSignUp && (
           <div className="login-popup-condition">
             <input type="checkbox" required />

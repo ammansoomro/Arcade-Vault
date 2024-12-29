@@ -36,14 +36,12 @@ const loginUser = async (req, res) => {
     // Generate authentication token
     const token = createToken(user._id);
 
-    // Respond with success
     return res.status(200).json({
       success: true,
       token,
       message: "Login successful.",
     });
   } catch (error) {
-    // Handle server errors
     return res.status(500).json({
       success: false,
       message: "An error occurred while logging in. Please try again later.",

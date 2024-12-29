@@ -7,6 +7,7 @@ import play_store from "./play_store.png";
 import add_icon from "./add_icon.svg";
 import plus from "./plus.svg";
 import minus from "./minus.svg";
+import orders_icon from "./orders_icon.svg";
 import cross_icon from "./cross_icon.svg";
 import basket_icon from "./basket_icon.svg";
 import search_icon from "./search_icon.svg";
@@ -26,4 +27,5 @@ export const assets = {
   cross_icon,
   basket_icon,
   search_icon,
+  orders_icon,
 };

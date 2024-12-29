@@ -28,6 +28,12 @@ a {
   margin: auto;
 }
 
+@media (max-width: 900px) {
+  .app {
+    width: 90%;
+  }
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;

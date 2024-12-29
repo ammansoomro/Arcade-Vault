@@ -14,6 +14,8 @@ const StoreContextProvider = ({ children }) => {
     }
   };
 
+  const [token, setToken] = useState(localStorage.getItem("token"));
+
   useEffect(() => {
     const fetchData = async () => {
       const data = await fetchList();
@@ -61,6 +63,8 @@ const StoreContextProvider = ({ children }) => {
   const contextValue = {
     item_list,
     cartItems,
+    token,
+    setToken,
     setCartItems,
     addToCart,
     removeFromCart,

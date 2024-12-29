@@ -72,7 +72,7 @@
 .navbar-right {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .navbar-right img {
@@ -146,7 +146,7 @@
   }
 
   .navbar .logo-text {
-    font-size: 14px;
+    font-size: 0.625rem;
   }
 
   .navbar-menu {
@@ -158,12 +158,14 @@
     gap: 1.25rem;
   }
 
+  
+
   .navbar-right img {
     width: 1.25rem;
   }
 
   .navbar-right button {
-    padding: 0.4375rem 1.25rem;
+    padding: 0.25rem 0.5rem;
     font-size: 0.9375rem;
   }
 }
