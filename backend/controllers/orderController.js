@@ -6,8 +6,8 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // Place Order
 const placeOrder = async (req, res) => {
-  const FRONTEND_URL = "http://localhost:5173"; 
-  const DELIVERY_CHARGES = 2 * 100; 
+  const FRONTEND_URL = "http://localhost:5173";
+  const DELIVERY_CHARGES = 2 * 100;
 
   try {
     const { userId, items, amount, address } = req.body;
@@ -34,10 +34,10 @@ const placeOrder = async (req, res) => {
       session_url: session.url,
     });
   } catch (error) {
-    console.error("Error placing order:", error.message);
+    console.log("Error placing order:", error.message);
     res.status(500).json({
       success: false,
-      message: "An error occurred while placing the order.",
+      message: "An error occurred while placing the order",
     });
   }
 };

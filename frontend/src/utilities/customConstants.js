@@ -15,6 +15,10 @@ const customConstants = {
   API_ADD_TO_CART: "http://localhost:4007/api/cart/add",
   API_REMOVE_FROM_CART: "http://localhost:4007/api/cart/remove",
   API_GET_CART: "http://localhost:4007/api/cart/get",
+
+  // Place Order
+  API_PLACE_ORDER: "http://localhost:4007/api/order/place",
+
 };
 
 export default customConstants;
