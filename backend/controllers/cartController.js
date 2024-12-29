@@ -1,31 +1,77 @@
 import userModel from "../models/userModel";
 
-const addToCart = async (req, res) => {
+const updateCart = async (req, res, action) => {
   try {
-    //   req.body.userId will be set by the middleware after converting the token back into the id
-    let userData = await userModel.findOne({ _id: req.body.userId });
-    let cartData = await userData.cartData;
-    if (!cartData[req.body.itemId]) {
-      cartData[req.body.itemId] = 1;
-    } else {
-      cartData[req.body.itemId] += 1;
+    const { userId, itemId } = req.body;
+
+    const user = await userModel.findById(userId);
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found.",
+      });
     }
 
-    await userModel.findByIdAndUpdate(req.body.usreId, { cartData });
+    const cartData = user.cartData || {};
+
+    if (action === "add") {
+      cartData[itemId] = (cartData[itemId] || 0) + 1;
+    } else if (action === "remove") {
+      if (cartData[itemId] > 0) {
+        cartData[itemId] -= 1;
+        if (cartData[itemId] === 0) delete cartData[itemId];
+      }
+    }
+
+    await userModel.findByIdAndUpdate(userId, { cartData });
+
     res.status(200).json({
       success: true,
-      message: "Item Added to Cart",
+      message:
+        action === "add" ? "Item added to cart" : "Item removed from cart",
     });
   } catch (error) {
-    return res.status(400).json({
+    console.error("Error updating cart:", error);
+    return res.status(500).json({
       success: false,
-      message: "Failed to Add Item to Cart",
+      message: "Failed to update cart.",
     });
   }
 };
 
-const removeFromCart = async (req, res) => {};
+// Add to Cart
+const addToCart = (req, res) => updateCart(req, res, "add");
 
-const getCart = async (req, res) => {};
+// Remove from Cart
+const removeFromCart = (req, res) => updateCart(req, res, "remove");
+
+// Get Cart
+const getCart = async (req, res) => {
+  try {
+    const { userId } = req.body;
+
+    // Fetch user data
+    const user = await userModel.findById(userId);
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found.",
+      });
+    }
+
+    // Return cart data
+    const cartData = user.cartData || {};
+    res.status(200).json({
+      success: true,
+      cart: cartData,
+    });
+  } catch (error) {
+    console.error("Error retrieving cart:", error);
+    return res.status(500).json({
+      success: false,
+      message: "Failed to retrieve cart.",
+    });
+  }
+};
 
 export { addToCart, removeFromCart, getCart };
