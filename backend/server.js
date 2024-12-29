@@ -6,7 +6,7 @@ import customConstants from "./utilities/customConstants.js";
 import entityRouter from "./routes/entityRoute.js";
 import categoryRouter from "./routes/categoryRoute.js";
 import userRouter from "./routes/userRoute.js";
-import cartRouter from "./routes/cartRouter.js";
+import cartRouter from "./routes/cartRoute.js";
 dotenv.config();
 
 // App Config
