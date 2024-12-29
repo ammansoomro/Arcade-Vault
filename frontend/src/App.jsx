@@ -4,7 +4,9 @@ import Home from "./pages/Home/Home";
 import Cart from "./pages/Cart/cart";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
 import PlaceOrder from "./pages/PlaceOrder/placeOrder";
+import Verify from "./pages/Verify/Verify";
 import Footer from "./components/Footer/Footer";
+
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 const App = () => {
@@ -19,6 +21,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/placeorder" element={<PlaceOrder />} />
+          <Route path="/verify" element={<Verify />} />
         </Routes>
       </div>
       <Footer />
