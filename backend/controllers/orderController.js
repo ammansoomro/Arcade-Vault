@@ -55,18 +55,34 @@ const clearUserCart = async (userId) => {
 
 //  Function to Prepare Line Items for Stripe
 const prepareLineItems = (items, deliveryCharges) => {
-  const lineItems = items.map((item) => ({
-    price_data: {
-      currency: "usd",
-      product_data: {
-        name: item.name,
-      },
-      unit_amount: item.price * 100, // Stripe expects the amount in cents
-    },
-    quantity: item.quantity,
-  }));
+  // Ensure items is a valid array
+  if (!Array.isArray(items) || items.length === 0) {
+    throw new Error("Items array is empty or invalid");
+  }
 
-  // Add delivery charges
+  // Map over the items to create line items
+  const lineItems = items.map((item) => {
+    if (!item.name || !item.price || !item.quantity) {
+      throw new Error(
+        `Invalid item data: Name, price, and quantity are required. Received: ${JSON.stringify(
+          item
+        )}`
+      );
+    }
+
+    return {
+      price_data: {
+        currency: "usd",
+        product_data: {
+          name: item.name,
+        },
+        unit_amount: item.price * 100, // Stripe expects the amount in cents
+      },
+      quantity: item.quantity,
+    };
+  });
+
+  // Add delivery charges as an additional line item
   lineItems.push({
     price_data: {
       currency: "usd",
@@ -75,6 +91,7 @@ const prepareLineItems = (items, deliveryCharges) => {
       },
       unit_amount: deliveryCharges,
     },
+    quantity: 1, // Add quantity for consistency
   });
 
   return lineItems;
