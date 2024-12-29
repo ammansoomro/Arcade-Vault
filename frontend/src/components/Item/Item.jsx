@@ -10,14 +10,7 @@ const Item = ({ id, name, price, desc, image }) => {
     <div className="item">
       <div className="item-image-container">
         <img className="item-image" src={image} alt={name} />
-        {!cartItems[id] ? (
-          <img
-            className="add"
-            onClick={() => addToCart(id)}
-            src={assets.add_icon}
-            alt="Add Item"
-          />
-        ) : (
+        {cartItems && id in cartItems ? (
           <div className="item-counter">
             <img
               src={assets.minus}
@@ -31,6 +24,13 @@ const Item = ({ id, name, price, desc, image }) => {
               alt="Increase Quantity"
             />
           </div>
+        ) : (
+          <img
+            className="add"
+            onClick={() => addToCart(id)}
+            src={assets.add_icon}
+            alt="Add Item"
+          />
         )}
       </div>
       <div className="item-info">

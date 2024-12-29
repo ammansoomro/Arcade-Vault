@@ -1,4 +1,4 @@
-import userModel from "../models/userModel";
+import userModel from "../models/userModel.js";
 
 const updateCart = async (req, res, action) => {
   try {
@@ -63,7 +63,7 @@ const getCart = async (req, res) => {
     const cartData = user.cartData || {};
     res.status(200).json({
       success: true,
-      cart: cartData,
+      cartData,
     });
   } catch (error) {
     console.error("Error retrieving cart:", error);
