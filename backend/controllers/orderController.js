@@ -4,9 +4,9 @@ import Stripe from "stripe";
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-// Place Order
+// * Place Order
 const placeOrder = async (req, res) => {
-  const FRONTEND_URL = "http://localhost:5173";
+  const FRONTEND_URL = process.env.FRONTEND_URL;
   const DELIVERY_CHARGES = 2 * 100;
 
   try {
@@ -107,4 +107,30 @@ const createCheckoutSession = async (lineItems, orderId, frontendUrl) => {
   });
 };
 
-export { placeOrder };
+// * Verify Order
+const verifyOrder = async (req, res) => {
+  const { orderId, success } = req.body;
+  try {
+    if (success == "true") {
+      await orderModel.findByIdAndUpdate(orderId, { payment: true });
+      res.status(200).json({
+        success: true,
+        message: "Paid",
+      });
+    } else {
+      await orderModel.findByIdAndDelete(orderId);
+      res.status(400).json({
+        success: false,
+        message: "Payment Failed",
+      });
+    }
+  } catch (error) {
+    console.log(error);
+    res.status(400).json({
+      success: false,
+      message: "Error",
+    });
+  }
+};
+
+export { placeOrder, verifyOrder };
