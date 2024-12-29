@@ -4,3 +4,5 @@ import stripe from "stripe";
 
 // Place Order
 const placeOrder = async (req, res) => {};
+
+export { placeOrder };

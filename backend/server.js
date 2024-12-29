@@ -7,6 +7,7 @@ import entityRouter from "./routes/entityRoute.js";
 import categoryRouter from "./routes/categoryRoute.js";
 import userRouter from "./routes/userRoute.js";
 import cartRouter from "./routes/cartRoute.js";
+import orderRouter from "./routes/orderRoute.js";
 dotenv.config();
 
 // App Config
@@ -25,6 +26,7 @@ app.use(customConstants.API_ENDPOINT + "items", entityRouter);
 app.use(customConstants.API_ENDPOINT + "categories", categoryRouter);
 app.use(customConstants.API_ENDPOINT + "user", userRouter);
 app.use(customConstants.API_ENDPOINT + "cart", cartRouter);
+app.use(customConstants.API_ENDPOINT + "order", orderRouter);
 app.use("/images", express.static("uploads"));
 
 app.get("/", (req, res) => {
