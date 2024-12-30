@@ -6,7 +6,7 @@ import axios from "axios";
 import { storeContext } from "../../context/StoreContext";
 
 const LoginPopup = ({ setShowLogin }) => {
-  const [isSignUp, setIsSignUp] = useState(true);
+  const [isSignUp, setIsSignUp] = useState(false);
   const toggleState = () => setIsSignUp((prev) => !prev);
   const { setToken } = useContext(storeContext);
   const [data, setData] = useState({
@@ -35,11 +35,9 @@ const LoginPopup = ({ setShowLogin }) => {
         setToken(token);
         localStorage.setItem("token", token);
         setShowLogin(false);
-      } else {
-        alert(response.data.message);
       }
     } catch (error) {
-      alert("An error occurred. Please try again.");
+      console.log(error);
     }
   };
 

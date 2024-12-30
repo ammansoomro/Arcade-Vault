@@ -2,8 +2,8 @@ import React, { useContext, useState } from "react";
 import "./placeOrder.css";
 import { storeContext } from "../../context/StoreContext";
 import customConstants from "../../utilities/customConstants";
-import axios from 'axios';
-const placeOrder = () => {
+import axios from "axios";
+const placeOrder = ({ setShowLogin }) => {
   const { token, cartItems, item_list, getTotalAmount } =
     useContext(storeContext);
 
@@ -44,7 +44,7 @@ const placeOrder = () => {
       // Handle response
       handleOrderResponse(response);
     } catch (error) {
-      // alert("Failed to place the order. Please try again.");
+      setShowLogin(true);
     }
   };
 

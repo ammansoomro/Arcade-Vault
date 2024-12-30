@@ -19,7 +19,7 @@ const Verify = () => {
       { headers: { token: localStorage.getItem("token") } }
     );
     if (response.data.success) {
-      navigate("/myorders");
+      navigate("/orders");
     } else {
       navigate("/");
     }

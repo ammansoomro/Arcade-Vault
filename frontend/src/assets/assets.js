@@ -9,6 +9,7 @@ import plus from "./plus.svg";
 import minus from "./minus.svg";
 import orders_icon from "./orders_icon.svg";
 import cross_icon from "./cross_icon.svg";
+import delivery_icon from "./delivery.svg";
 import basket_icon from "./basket_icon.svg";
 import search_icon from "./search_icon.svg";
 import header_img from "./header_img.png";
@@ -28,4 +29,5 @@ export const assets = {
   basket_icon,
   search_icon,
   orders_icon,
+  delivery_icon,
 };

@@ -9,6 +9,7 @@ import Footer from "./components/Footer/Footer";
 
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import MyOrders from "./pages/MyOrders/MyOrders";
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
 
@@ -20,8 +21,12 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/placeorder" element={<PlaceOrder />} />
+          <Route
+            path="/placeorder"
+            element={<PlaceOrder setShowLogin={setShowLogin} />}
+          />
           <Route path="/verify" element={<Verify />} />
+          <Route path="/orders" element={<MyOrders />} />
         </Routes>
       </div>
       <Footer />
