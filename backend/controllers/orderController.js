@@ -133,4 +133,19 @@ const verifyOrder = async (req, res) => {
   }
 };
 
-export { placeOrder, verifyOrder };
+// * User Orders
+const userOrders = async (req, res) => {
+  try {
+    const orders = await orderModel.find({ userId: req.body.userId });
+    res.status(200).json({
+      success: true,
+      data: orders,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: "Error, Orders Not Found",
+    });
+  }
+};
+export { placeOrder, verifyOrder, userOrders };
