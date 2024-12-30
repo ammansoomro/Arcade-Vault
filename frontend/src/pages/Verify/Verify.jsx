@@ -3,12 +3,10 @@ import "./Verify.css";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import axios from "axios";
 import customConstants from "../../utilities/customConstants";
-import { storeContext } from "../../context/StoreContext";
 const Verify = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const success = searchParams.get("success");
   const orderId = searchParams.get("orderId");
-  const { token } = useContext(storeContext);
   const navigate = useNavigate();
 
   const verifyPayment = async () => {
@@ -18,7 +16,7 @@ const Verify = () => {
         success,
         orderId,
       },
-      { headers: { token } }
+      { headers: { token: localStorage.getItem("token") } }
     );
     if (response.data.success) {
       navigate("/myorders");
